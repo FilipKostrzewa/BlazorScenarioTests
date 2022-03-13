@@ -15,11 +15,21 @@
     </tr>
     <tr>
         <td>Login:</td>
-        <td><input type="text" /></td>
+        <td>
+            <input
+                @onchange="(e) => _dispatcher.Dispatch(new SetLogin(e.Value as string))"
+                value="@_state.Value.Login"
+                type="text"/>
+        </td>
     </tr>
     <tr>
         <td>Email:</td>
-        <td><input type="text" /></td>
+        <td>
+            <input 
+                @onchange="(e) => _dispatcher.Dispatch(new SetEmail(e.Value as string))"
+                value = "@_state.Value.Email"
+                type="text"/>
+        </td>
     </tr>
 
     <tr>
