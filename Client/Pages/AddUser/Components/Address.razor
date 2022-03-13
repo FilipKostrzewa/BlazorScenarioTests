@@ -1,0 +1,41 @@
+﻿@inherits FluxorComponent
+@inject IState<AddUserState> _state
+@inject IDispatcher _dispatcher
+
+<tr>
+    <td/>
+    <td><b>@Title</b></td>
+</tr>
+<tr>
+    <td>Street:</td>
+    <td>
+        <input @onchange="(e) => SetStreet.InvokeAsync(e.Value?.ToString())"
+               value="@Data.Street"
+               type="text"/>
+    </td>
+
+</tr>
+<tr>
+    <td>City:</td>
+    <td>
+        <input @onchange="(e) => SetCity.InvokeAsync(e.Value?.ToString())"
+               value="@Data.City"
+               type="text"/>
+    </td>
+</tr>
+<tr>
+    <td>Country:</td>
+    <td>
+        <input @onchange="(e) => SetCountry.InvokeAsync(e.Value?.ToString())"
+               value="@Data.Country"
+               type="text"/>
+    </td>
+</tr>
+
+@code {
+    [Parameter] public string Title { get; set; }
+    [Parameter] public AddressData Data { get; set; }
+    [Parameter] public EventCallback<string> SetStreet { get; set; }
+    [Parameter] public EventCallback<string> SetCity { get; set; }
+    [Parameter] public EventCallback<string> SetCountry { get; set; }
+}

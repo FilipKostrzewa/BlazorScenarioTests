@@ -1,0 +1,61 @@
+﻿@page "/adduser"
+@inherits FluxorComponent
+@using BlazorScenarioTests.Client.Pages.AddUser.Components
+@using BlazorScenarioTests.Client.Pages.AddUser.Actions
+@inject IState<AddUserState> _state
+@inject IDispatcher _dispatcher
+
+<h3>Add user</h3>
+<br />
+
+<table>
+    <tr>
+        <td/>
+        <td><b>User</b></td>
+    </tr>
+    <tr>
+        <td>Login:</td>
+        <td><input type="text" /></td>
+    </tr>
+    <tr>
+        <td>Email:</td>
+        <td><input type="text" /></td>
+    </tr>
+
+    <tr>
+        <td/>
+        <td><br /></td>
+    </tr>
+    <Address 
+        Title="Address" 
+        SetStreet="(a) => _dispatcher.Dispatch(new SetStreet(a))"
+        SetCity="(a) => _dispatcher.Dispatch(new SetCity(a))"
+        SetCountry="(a) => _dispatcher.Dispatch(new SetCountry(a))"
+        Data="@(new AddressData{
+                  Street = _state.Value.Address?.Street,
+                  City = _state.Value.Address?.City,
+                  Country = _state.Value.Address?.Country})" />
+    <tr>
+        <td />
+        <td><button @onclick="() => _dispatcher.Dispatch(new CopyAddress())">Copy address</button></td>
+    </tr>
+    <tr>
+        <td />
+        <td><br /></td>
+    </tr>
+    <Address 
+        Title="Address" 
+        SetStreet="(a) => _dispatcher.Dispatch(new SetContactStreet(a))"
+        SetCity="(a) => _dispatcher.Dispatch(new SetContactCity(a))"
+        SetCountry="(a) => _dispatcher.Dispatch(new SetContactCountry(a))"
+        Data="@(new AddressData{
+                  Street = _state.Value.ContactAddress?.Street,
+                  City = _state.Value.ContactAddress?.City,
+                  Country = _state.Value.ContactAddress?.Country})" />
+</table>
+
+<br />
+<button class="btn btn-primary"><b>Submit user</b></button>
+
+
+
