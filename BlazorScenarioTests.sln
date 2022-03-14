@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorScenarioTests.Client"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorScenarioTests.Shared", "Shared\BlazorScenarioTests.Shared.csproj", "{EE913878-54FA-49B4-9103-CAFFD1DA28BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorScenarioTests.Client.Tests", "Client.Tests\BlazorScenarioTests.Client.Tests\BlazorScenarioTests.Client.Tests.csproj", "{EF5A3625-6C11-4449-A617-1568AAF29C67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{EE913878-54FA-49B4-9103-CAFFD1DA28BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE913878-54FA-49B4-9103-CAFFD1DA28BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE913878-54FA-49B4-9103-CAFFD1DA28BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF5A3625-6C11-4449-A617-1568AAF29C67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF5A3625-6C11-4449-A617-1568AAF29C67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF5A3625-6C11-4449-A617-1568AAF29C67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF5A3625-6C11-4449-A617-1568AAF29C67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
